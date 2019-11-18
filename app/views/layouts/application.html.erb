@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cook</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/78e0922240.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+
+  </head>
+
+  <body>
+    <header>
+      <div class="heading__box">
+        <% if user_signed_in? %>
+            <%= link_to destroy_user_session_path, class: "post", method: :delete do%>
+              <i class="fa fa-sign-out faa-tada animated-hover"></i>
+            <% end %>
+            <%= link_to "/posts/new", class: "post" do%>
+              <i class="fas fa-pen faa-tada animated-hover"></i>
+            <% end %>
+          </div>
+        <% else %>
+            <%= link_to new_user_session_path, class: 'post' do%>
+              <i class="fa fa-sign-in faa-tada animated-hover"></i>
+            <% end %>
+            <%= link_to new_user_registration_path, class: 'post' do%>
+              <i class="fas fa-user-edit faa-tada animated-hover"></i>
+            <% end %>
+          </div>
+        <% end %>
+      <div class ="heading">
+        <h1 class ="titles">ミウラパッド</h1>
+        <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "料理名 食材 値段", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+        <% end %>
+      </div>
+        <div class="heading__menu">
+            <div class="user__info">
+            <% if user_signed_in? %>
+              <%= link_to "#{current_user.nickname}", "/users/#{current_user.id}" %>
+              <i class="far fa-grin-squint my-yellow faa-wrench animated"></i>
+            <% else %>
+              <i class="far fa-grin-squint my-yellow faa-wrench animated"></i>
+            <% end %>
+            </div>
+          </div>
+      </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>

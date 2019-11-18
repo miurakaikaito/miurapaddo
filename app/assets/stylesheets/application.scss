@@ -1,0 +1,87 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "./reset";
+ @import "./posts";
+ @import "font-awesome";
+ @import "./images.scss";
+
+h1 {
+  font-size: 60px;
+  color: white;
+  font-family: "Kokoro", cursive;
+  padding-top: 15px;
+}
+
+header {
+  height: 120px;
+  display: flex;
+  background-color: #dbf7c6c2;
+  font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
+}
+
+.heading {
+  background-color: #dbf7c6c2;
+  height: 120px;
+  width: 900px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.heading__box {
+  width: 270px;
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+
+}
+.heading__menu {
+  display: flex;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.post{
+  color: black;
+  font-size: 40px;
+}
+
+.content-pots {
+  width: 50%;
+}
+
+form{
+  margin-top: 40px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+.user__info a{
+  font-size: 40px;
+}
+
+.far {
+  font-size: 40px;
+}
+.my-yellow {
+  color: #55e04c;
+}
+
+
+

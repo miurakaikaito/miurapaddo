@@ -1,0 +1,16 @@
+<div class="left-content__list">
+  <%= link_to "/posts/#{post.id}" do %>
+    <div class="left-content__image" style="background-image: url(<%= post.image %>);">
+    </div>
+  <% end %>
+  <div class= "menu">
+    <div class= "menu-box">
+      <span class="name-content">
+        <%= post.name %>
+      </span>
+        <a href="/users/<%= post.user.id %>">
+          <span><%= post.user.nickname %></span>
+        </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_for @post do |form| %>
+      <h3>
+        投稿する
+      </h3>
+      <%= form.text_field :name, placeholder: "例: ホクホク肉じゃが" %>
+      <%= form.text_field :image, placeholder: "写真" %>
+      <%= form.text_area :text, placeholder: "材料" , rows: "10" %>
+      <%= form.text_area :text2, placeholder: "作り方" , rows: "10" %>
+      <%= form.submit "SEND" %>
+      <%= link_to new_recipe_path do%>
+        <P>作り方</p>
+      <% end %>
+      <%= link_to new_menu_path do%>
+        <P>材料</p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
