@@ -36,7 +36,7 @@
       <div class ="heading">
         <h1 class ="titles">ミウラパッド</h1>
         <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
-          <%= form.text_field :keyword, placeholder: "料理名 食材 値段", class: "search-input" %>
+          <%= form.text_field :keyword, placeholder: "料理名 食材", class: "search-input" %>
           <%= form.submit "検索", class: "search-btn" %>
         <% end %>
       </div>
