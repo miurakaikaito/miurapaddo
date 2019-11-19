@@ -33,6 +33,7 @@ body {
     height: 600px;
     margin: auto;
     background-size: cover;
+    margin-top: 15px;
   }
 }
 .menu {
@@ -166,6 +167,71 @@ body {
   margin-top: 15px;
 }
 
+.new_post {
+  width: 100%;
+  height: 100vh;
+}
 
+.container {
+  text-align: center;
+}
 
+input{
+  text-align: center;
+}
 
+textarea{
+  text-align: center;
+  width: 500px;
+}
+
+.name-list {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.image-list {
+  margin-bottom: 15px;
+}
+
+.text-list {
+  margin-bottom: 15px;
+}
+
+.text2-list {
+  margin-bottom: 15px;
+}
+
+.name-list1 {
+  width: 500px;
+}
+.name-list2{
+  width: 500px;
+  height: 100px;
+}
+.left-content__box-image{
+  width: 450px;
+  height: 300px;
+  background-size: cover;
+  float: left;
+  margin: 15px;
+}
+
+.text1{
+  text-align: center;
+  font-size: 50px;
+}
+
+h4{
+  text-align: center;
+}
+
+.comments {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.box {
+  width: 100%;
+}
