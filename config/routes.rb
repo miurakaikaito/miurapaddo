@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   resources :posts do
   resources :comments, only: [:create]
+  resources :likes, only: [:create, :destroy]
   collection do
     get 'search'
+    get 'zairyou'
+    get 'recipe'
+    get 'impressions'
+    get 'done'
   end
   end
-  resources :recipes, only: [:new,:create]
-  resources :menus, only: [:new]
-  resources :images, only: [:index,]
-  resources :users, only: [:show]
+  resources :users, only: [:show,:index]
   end

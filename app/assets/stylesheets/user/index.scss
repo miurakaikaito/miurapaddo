@@ -1,0 +1,102 @@
+.user-index{
+  width: 100%;
+
+
+  &_box{
+    border-bottom: solid 1px #d5d2cd;
+  }
+  &_title{
+    display: flex;
+    padding: 32px 0;
+    width: 1021px;
+    margin: auto;
+    
+    .usericon{
+      margin: 0 32px 0 0;
+      height: 96px;
+      width: 96px;
+    }
+    .user-image{
+      border-radius: 50%;
+    }
+  }
+  &_date{
+    margin-left: 30px;
+  }
+  &_name{
+    font-size: 30px;
+  }
+  &_content{
+    border-bottom: solid 1px #d5d2cd;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .08), 0 -1.33333px 6px 0 rgba(36, 36, 36, .04);
+    width: 100%;
+  }
+
+  &_lists{
+    width: 70%;
+    height: 80px;
+    margin: auto;
+    display: flex;
+  }
+
+    .user-index_lists li {
+      color: #333;
+      float: left;
+      margin: 0 10px -1px 0;
+      padding: 10px 20px;
+      cursor: pointer;
+      list-style: none;
+      transition: .3s;
+    }
+
+    .user-index_lists li.active {
+      color: #63e204;
+      cursor: auto;
+      box-shadow: 0 2px 0 0  #63e204;
+      line-height: 3.5;
+    }
+    .user-index_center ul {
+      display: none;
+    }
+    .user-index_center ul.user-index_main{
+      display: block;
+    }
+  &_center{
+    height: auto;
+    overflow-x: hidden;
+    width: 80%;
+    margin: auto;
+  }
+  &_list{
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 3;
+  }
+
+  &_main {
+    li{
+      display: flex;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+  }
+  &_main2 {
+    li{
+      display: flex;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &_main-box{
+    padding: 10px;
+  }
+  &_image{
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, .28);
+  }
+}
+
+
+ 
+

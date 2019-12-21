@@ -1,0 +1,36 @@
+%header
+  = link_to "MIURA KITCHEN", root_path,class: "up_name"
+  .up_sab アカウント作成
+.up_main
+  = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+    = render "devise/shared/error_messages", resource: resource
+    = devise_error_messages!
+    .field
+      = f.label "ニックネーム"
+      %br/
+      = f.text_field :nickname, autofocus: true, maxlength: "6"
+    .field
+      = f.label "メールアドレス"
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .field
+      = f.label "パスワード"
+      %br/
+      = f.password_field :password, autocomplete: "new-password"
+    .field
+      = f.label "確認用パスワード"
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password"
+    .field
+      = f.label :text
+      %br/
+      = f.text_field :text
+    .field
+      = f.label :image
+      %br/
+      = f.file_field :image
+    .actions
+      = f.submit "次に進む" ,class:"btn"
+.up_footer
+  すでにアカウントをお持ちですか？
+  = render "devise/shared/links"

@@ -1,0 +1,189 @@
+.recipe-main {
+  height: 500px;
+  background-color: white;
+
+  &__title {
+    font-size: 40px;
+    display: flex;
+    max-width: 900px;
+    margin: auto;
+    justify-content: center;
+    padding: 15px;
+  }
+
+  &-box{
+  display: flex;
+  }
+
+  &-box__image {
+  height: 500px;
+  width: 800px;
+  background-size: cover;
+  margin-bottom: 15px;
+  margin-left: 50px;
+  }
+
+  &-box-content {
+  height: 400px;
+  width: 200px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+
+  
+  }
+
+  &-box-content__name {
+  height: 60px;
+  width: 250px;
+  margin: auto;
+  }
+ 
+  &-box-content__text {
+  height: 440px;
+  width: 250px;
+  border: solid 3px #dbf7c6c2;
+  border-radius: 10px;
+  overflow: scroll;
+  }
+}
+.recipe-main-box-content__name p{
+  text-align: center;
+  font-size: 35px;
+}
+.recipe-main-box-content__text p{
+  font-size: 25px;
+  text-align: center;
+}
+
+.step-main {
+
+}
+.box26 {
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 3px #dbf7c6c2;
+  border-radius: 8px;
+  margin: 0 30px;
+}
+.box26 .box-title {
+  position: absolute;
+  display: inline-block;
+  top: -13px;
+  left: 10px;
+  padding: 0 9px;
+  line-height: 1;
+  font-size: 19px;
+  background: #FFF;
+  color: #63e204;
+  font-weight: bold;
+}
+.box26 p {
+  margin: 0; 
+  padding: 0;
+  font-size: 20px;
+  text-align: left;
+}
+
+.name{
+  font-size: 40px;
+  padding-right: 15px;
+}
+.name-content{
+  font-size: 30px;
+}
+
+
+.more_lists {
+  text-align: center;
+  margin-top: 15px;
+}
+.more_lists a{
+  color: #66e84f;
+  font-size: 40px;
+}
+
+.name-box {
+  font-size: 30px;
+  text-align: center;
+  color: #31f70e;
+  margin-top: 15px;
+}
+
+.new_post {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+
+textarea{
+  text-align: center;
+  width: 500px;
+}
+
+.name-list {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.image-list {
+  margin-bottom: 15px;
+}
+
+.text-list {
+  margin-bottom: 15px;
+}
+
+.text2-list {
+  margin-bottom: 15px;
+}
+
+.name-list1 {
+  width: 500px;
+}
+.name-list2{
+  width: 500px;
+  height: 100px;
+}
+.left-content__box-image{
+  width: 450px;
+  height: 300px;
+  background-size: cover;
+  float: left;
+  margin: 15px;
+}
+
+.text1{
+  text-align: center;
+  font-size: 50px;
+}
+
+
+.comments {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.box {
+  width: 100%;
+}
+
+.love-btn{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  height: 48px;
+  font-size: 15px;
+  border: solid 1px #66e84f;
+  color: #66e84f;
+  width: 253px;
+}

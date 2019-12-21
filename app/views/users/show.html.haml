@@ -1,0 +1,8 @@
+.contents.row
+  .content-box
+    %p.text1
+      = @nickname
+      さんの投稿一覧
+    - @posts.each do |post|
+      = link_to "/posts/#{post.id}" do
+        .left-content__box-image{:style => "background-image: url(#{post.image});"}

@@ -1,0 +1,5 @@
+.box
+  - @post.each do |post|
+    .content_list
+      = link_to "/posts/#{post.id}", class:"box-image" do
+        =image_tag "#{post.image}",size: '270x270',class:'content_image'

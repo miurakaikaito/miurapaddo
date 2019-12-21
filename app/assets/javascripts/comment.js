@@ -22,13 +22,13 @@ $(function(){
       contentType: false
     })
   })
-  .done(function(data){
-    var html = buildHTML(data);
-    $('.comments').append(html);
-    $('.textbox').val('');
-    $('.form__submit').prop('disabled', false);
-  })
-  .fail(function(){
-    alert('error');
-  })
+  // .done(function(data){
+  //   var html = buildHTML(data);
+  //   $('.comments').append(html);
+  //   $('.textbox').val('');
+  //   $('.form__submit').prop('disabled', false);
+  // })
+  // .fail(function(){
+  //   alert('error');
+  // })
 })

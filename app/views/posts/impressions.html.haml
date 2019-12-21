@@ -1,0 +1,5 @@
+.contents.row
+  = form_for @post, url: posts_path,method: :post do |form|
+    .text-list
+      = form.text_area :text2, placeholder: "感想" , rows: "10"
+    = form.submit "SEND", class: "name-list2"

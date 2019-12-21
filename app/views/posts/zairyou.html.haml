@@ -1,0 +1,5 @@
+.contents.row
+  = form_for @post, url: recipe_posts_path,method: :get do |form|
+    .text-list
+      = form.text_area :text, placeholder: "材料" , rows: "10"
+      = form.submit "SEND", class: "name-list2"

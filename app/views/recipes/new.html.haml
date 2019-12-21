@@ -1,0 +1,11 @@
+.contents.row
+  .container
+    = form_for @recipe do |form|
+      %h3
+        投稿する
+      = form.text_area :text1, placeholder: "text" , rows: "10"
+      = form.text_area :text2, placeholder: "text" , rows: "10"
+      = form.text_area :text3, placeholder: "text" , rows: "10"
+      = form.text_area :text4, placeholder: "text" , rows: "10"
+      = form.text_area :text5, placeholder: "text" , rows: "10"
+      = form.submit "SEND"

@@ -1,0 +1,25 @@
+%header
+  .heading
+    .heading_title
+      =link_to "MIURA KITCHEN", root_path, class:"header-name"
+    .heading_content
+      = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
+        = form.text_field :keyword, placeholder: "料理名・食材でレシピを検索", class: "search-input"
+        %button.search-btn
+          %i.fas.fa-search
+    .heading_box
+      - if user_signed_in?
+        =link_to users_path, class: "header-menu" do
+          - if  current_user.image.present? 
+            =image_tag "#{current_user.image}", size: '100x100', class:'usericon'
+          -else
+            %img.usericon{alt: "", src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}
+        = link_to "/posts/new", class: "heading_name" do
+          投稿する
+        = link_to destroy_user_session_path, class: "heading_name", method: :delete do
+          ログアウト
+      - else
+        = link_to new_user_session_path, class: 'heading_name' do
+          ログイン
+        = link_to new_user_registration_path, class: 'heading_name' do
+          会員登録

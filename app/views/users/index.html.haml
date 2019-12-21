@@ -1,0 +1,34 @@
+= render partial: "posts/header"
+.user-index
+  .user-index_box
+    .user-index_title
+      - if  current_user.image.present? 
+        =image_tag "#{current_user.image}", size: '100x100', class:'user-image'
+      -else
+        %img.user-image{alt: "", src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}
+      .user-index_date
+        %span.user-index_name
+          = @nickname
+        %br
+        %span.user-index_text
+          = @user.text
+  .user-index_content
+    %ul.user-index_lists.clearfix
+      %li.user-index_list
+        投稿一覧
+      %li.user-index_list
+        お気に入り
+  .user-index_center
+    %ul.user-index_main
+      %li
+        - @post.each do |post|
+          .user-index_main-box
+            = link_to "/posts/#{post.id}" do
+              =image_tag "#{post.image}", size: '200x200', class:'user-index_image'
+    %ul.user-index_main2
+      %li
+        - @user.liked_posts.each do |post|
+          .user-index_main-box
+            = link_to "/posts/#{post.id}" do
+              =image_tag "#{post.image}", size: '200x200', class:'user-index_image'
+

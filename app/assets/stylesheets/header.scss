@@ -1,0 +1,79 @@
+header {
+  display: flex;
+  background-color: #dbf7c6c2;
+  font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 4px 6px;
+  width: 100%;
+  justify-content: center;
+  height: 70px;
+}
+.heading{
+  align-items: center;
+  display: flex;
+  max-width: 1340px;
+  min-width: 1024px;
+  width: 100%;
+
+  &_title{
+    margin-right: 37px;
+    font-family: -webkit-pictograph;
+    font-size: 35px;
+    color: black;
+  }
+
+  &_content {
+    width: 50%;
+  }
+    .search-form{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .search-input{
+      width: 100%;
+      height: 30px;
+      background-color: #fff;
+      border: 1px solid #d5d2cd;
+      border-radius: 20px;
+      outline: 0;
+      padding-left: 20px;
+    }
+
+    .search-btn{
+      position: absolute;
+      right: 0px;
+      padding: 12px;
+      background-color: transparent;
+      border: aliceblue;
+      font-size: 15px;
+      outline: 0;
+    }
+
+    &_box {
+      width: 22%;
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+    }
+    
+    &_name{
+      align-items: center;
+      border: 1px solid #4a4a4a;
+      border-radius: 15px;
+      color: #635f5a;
+      padding: 4px 10px;
+      margin-right: 16px;
+    }
+    .usericon{
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+}
+
+
+

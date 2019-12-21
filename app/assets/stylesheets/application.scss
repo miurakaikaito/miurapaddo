@@ -13,75 +13,23 @@
  *= require_tree .
  *= require_self
  */
- @import "./reset";
- @import "./posts";
+ @import "reset";
  @import "font-awesome";
- @import "./images.scss";
-
-h1 {
-  font-size: 60px;
-  color: white;
-  font-family: "Kokoro", cursive;
-  padding-top: 15px;
-}
-
-header {
-  height: 120px;
-  display: flex;
-  background-color: #dbf7c6c2;
-  font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
-}
-
-.heading {
-  background-color: #dbf7c6c2;
-  height: 120px;
-  width: 900px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.heading__box {
-  width: 270px;
-  height: 120px;
-  display: flex;
-  justify-content: space-around;
-  margin-top: 30px;
-
-}
-.heading__menu {
-  display: flex;
-  margin: auto;
-  margin-top: 30px;
-}
-
-.post{
-  color: black;
-  font-size: 40px;
-}
-
-.content-pots {
-  width: 50%;
-}
-
-form{
-  margin-top: 40px;
-}
+ @import "slick";
+ @import "slick-theme";
+ @import "header";
+ @import "post/index";
+ @import "post/show";
+ @import "user/index";
+ @import "images";
 
 a{
   text-decoration: none;
-  color: black;
-  font-size: 30px;
-}
-.user__info a{
-  font-size: 40px;
+  display: block;
 }
 
-.far {
-  font-size: 40px;
-}
-.my-yellow {
-  color: #55e04c;
-}
+
+
 
 
 
