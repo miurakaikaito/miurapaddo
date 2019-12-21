@@ -19,6 +19,7 @@ header {
     font-family: -webkit-pictograph;
     font-size: 35px;
     color: black;
+    font-weight: bold;
   }
 
   &_content {
@@ -65,6 +66,7 @@ header {
       color: #635f5a;
       padding: 4px 10px;
       margin-right: 16px;
+      font-weight: bold;
     }
     .usericon{
       height: 50px;
