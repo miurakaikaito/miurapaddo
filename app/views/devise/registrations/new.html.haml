@@ -2,35 +2,38 @@
   = link_to "MIURA KITCHEN", root_path,class: "up_name"
   .up_sab アカウント作成
 .up_main
-  = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+  = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |form|
     = render "devise/shared/error_messages", resource: resource
     = devise_error_messages!
     .field
-      = f.label "ニックネーム"
+      = form.label "プロフィール画像"
       %br/
-      = f.text_field :nickname, autofocus: true, maxlength: "6"
+      = form.file_field :image
+    .preview
     .field
-      = f.label "メールアドレス"
+      = form.label "ニックネーム"
       %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
+      = form.text_field :nickname, autofocus: true, maxlength: "6"
     .field
-      = f.label "パスワード"
+      = form.label "メールアドレス"
       %br/
-      = f.password_field :password, autocomplete: "new-password"
+      = form.email_field :email, autofocus: true, autocomplete: "email"
     .field
-      = f.label "確認用パスワード"
+      = form.label "パスワード"
       %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
+      = form.password_field :password, autocomplete: "new-password"
     .field
-      = f.label :text
+      = form.label "確認用パスワード"
       %br/
-      = f.text_field :text
+      = form.password_field :password_confirmation, autocomplete: "new-password"
     .field
-      = f.label :image
+      = form.label "ひとこと"
       %br/
-      = f.file_field :image
+      = form.text_field :text
+
+
     .actions
-      = f.submit "次に進む" ,class:"btn"
+      = form.submit "次に進む" ,class:"btn"
 .up_footer
   すでにアカウントをお持ちですか？
   = render "devise/shared/links"

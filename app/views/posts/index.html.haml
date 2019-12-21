@@ -1,6 +1,6 @@
 = render partial: "header"
 .contents
-  .content
+  .slick
     %ul.slider
       %li
         = image_tag "/img/vegetables-1584999_1280.jpg", :size =>'1152x400'
@@ -10,6 +10,7 @@
         = image_tag "/img/spices-2548653_1280.jpg", :size =>'1152x400'
       %li
         = image_tag "/img/meat-2602031_1280.jpg", :size =>'1152x400'
+  .content
     .title
       =link_to "人気のレシピ", "#", class:"title-name"
     .content_lists
