@@ -9,7 +9,7 @@
       = form.label "プロフィール画像"
       %br/
       = form.file_field :image
-    .preview
+    .preview2
     .field
       = form.label "ニックネーム"
       %br/
@@ -29,7 +29,9 @@
     .field
       = form.label "ひとこと"
       %br/
-      = form.text_field :text
+      = form.text_area :text, class:"new-text"
+
+
     .actions
       = form.submit "次に進む" ,class:"btn"
 .up_footer
