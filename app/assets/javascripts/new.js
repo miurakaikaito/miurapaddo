@@ -3,7 +3,7 @@ $(function(){
   $('form').on('change', 'input[type="file"]', function(e) {
     var file = e.target.files[0],
         reader = new FileReader(),
-        $preview = $(".preview");
+        $preview2 = $(".preview2");
         t = this;
 
     // 画像ファイル以外の場合は何もしない
@@ -15,12 +15,12 @@ $(function(){
     reader.onload = (function(file) {
       return function(e) {
         //既存のプレビューを削除
-        $preview.empty();
+        $preview2.empty();
         // .prevewの領域の中にロードした画像を表示するimageタグを追加
-        $preview.append($('<img>').attr({
+        $preview2.append($('<img>').attr({
                   src: e.target.result,
                   width: "150px",
-                  class: "preview",
+                  class: "preview2",
                   title: file.name
               }));
       };

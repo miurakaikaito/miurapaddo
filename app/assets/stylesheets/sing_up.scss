@@ -47,6 +47,7 @@ header{
         height: 30px;
         outline: none;
         margin: 0 0;
+        border: none;
       }
       input{
         width: 380px;
@@ -54,6 +55,7 @@ header{
         margin: 10px 0px;
         padding: 5px 5px 5px 15px;
         outline: none;
+        border: solid 1px #ffaa4e;
       }
     }
     .field2{
@@ -72,6 +74,15 @@ header{
         outline: none;
       }
     }
+  .new-text{
+    width: 380px;
+    height: 80px;
+    margin: 10px 0px;
+    padding: 5px 5px 5px 15px;
+    outline: none;
+    resize: none;
+    border: solid 1px #ffaa4e;
+  }
 
   .actions{
     margin-top: 50px;
@@ -121,7 +132,7 @@ header{
   font-weight: bold;
 }
 
-.preview{
+.preview2{
   width: 404px;
   height: 200px;
   display: block;
