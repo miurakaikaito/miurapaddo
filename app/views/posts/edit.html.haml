@@ -1,13 +1,22 @@
-.contents.row
-  .box
-    = form_with(model: @post, local: true) do |form|
-      .container
-        .name-list
-          = form.text_field :name, class: "name-list1", placeholder: "例: ホクホク肉じゃが"
-        .image-list
-          = form.file_field :image, class: "name-list1", placeholder: "写真"
-        .text-list
-          = form.text_area :text, placeholder: "材料" , rows: "10"
-        .text2-list
-          = form.text_area :text2, placeholder: "作り方" , rows: "10"
-        = form.submit "SEND", class: "name-list2"
+.contents
+  = form_for @post do |form|
+    .container
+      .name-list
+        = form.text_field :name, class: "name-list1", placeholder: "例: ホクホク肉じゃが"
+      .field
+        = form.file_field :image, class: "name-list1", placeholder: "写真"
+      .preview2
+      .text2-list
+        %h2 材料
+        = form.fields_for :menus do |menu|
+          = menu.text_field :menu
+      .text2-list
+        %h2 材料
+        = form.fields_for :recipes do |recipe|
+          = recipe.text_area :recipe, placeholder: "作り方"
+      .text2-list
+        .image_box_main
+          .preview
+          = form.fields_for :images do |img|
+            = img.file_field :image_url 
+      = form.submit "SEND", class: "name-list2"
