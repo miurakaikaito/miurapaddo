@@ -44,6 +44,8 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     10.times{@post.images.build}
+    10.times{@post.menus.build}
+    10.times{@post.recipes.build}
   end
 
   # def zairyou
@@ -74,8 +76,10 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:name, :text, :image, :text2,
-     :price,images_attributes: [:image_url]
+    params.require(:post).permit(:name, :text, :image, :text2,:price,
+    images_attributes: [:image_url],
+    menus_attributes: [:menu],
+    recipes_attributes: [:recipe]
      ).merge(user_id: current_user.id)
   end
 

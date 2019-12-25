@@ -23,11 +23,19 @@
           .recipe-main-box-content__name
             %p 材料
           .recipe-main-box-content__text
-            = simple_format(@post.text)
+            -@post.menus.where("menu is not NULL").each_with_index do |menu,i|
+              %h3{class: "menu-name#{++i}"}
+                = menu.menu
       .step-main
         .box26
           %span.box-title 作り方
-          = simple_format(@post.text2)
+          .aa
+            -@post.images.where("image_url is not NULL").each_with_index do |img, i|
+              = image_tag "#{img.image_url}", size: '60x60',id: "image-#{i}",class:'post_show_photos'
+          .aa
+            -@post.recipes.where("recipe is not NULL").each_with_index do |recipe,i|
+              %h3{class: "recipe-name#{++i}"}
+                = recipe.recipe
       .container
         - if current_user
           = form_with(model: [@post, @comment], local: true, id: "new_comment") do |form|

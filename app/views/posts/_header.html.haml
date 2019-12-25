@@ -9,7 +9,7 @@
           %i.fas.fa-search
     .heading_box
       - if user_signed_in?
-        =link_to users_path, class: "header-menu" do
+        =link_to users_path, class: "header_menu" do
           - if  current_user.image.present? 
             =image_tag "#{current_user.image}", size: '100x100', class:'usericon'
           -else
@@ -23,3 +23,29 @@
           ログイン
         = link_to new_user_registration_path, class: 'heading_name' do
           会員登録
+    #nav-drawer
+      %input#nav-input.nav-unshown{:type => "checkbox"}/
+      %label#nav-open{:for => "nav-input"}
+        %span
+      %label#nav-close.nav-unshown{:for => "nav-input"}
+      #nav-content
+        .nav_title MENU
+        - if user_signed_in?
+          =link_to users_path, class: "header_menu2" do
+            - if  current_user.image.present? 
+              =image_tag "#{current_user.image}", size: '100x100', class:'usericon2'
+              .user-name
+                = current_user.nickname
+            -else
+              %img.usericon{alt: "", src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}
+          = link_to "/posts/new", class: "heading_name2" do
+            投稿する
+          = link_to destroy_user_session_path, class: "heading_name2", method: :delete do
+            ログアウト
+        - else
+          = link_to new_user_session_path, class: 'heading_name2' do
+            ログイン
+          = link_to new_user_registration_path, class: 'heading_name2' do
+            会員登録
+
+

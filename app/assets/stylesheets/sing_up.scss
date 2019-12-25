@@ -1,10 +1,17 @@
-header{
+.header2{
   display: flex;
   flex-flow: row nowrap;
   padding: 22px 16px;
   box-sizing: border-box;
   width: 100%;
   border-bottom: 1px solid #d2d2d1;
+  display: flex;
+  background-color: #dbf7c6c2;
+  font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 4px 6px;
+  width: 100%;
+  justify-content: center;
+  height: 70px;
 }
   .up_name{
     color: black;
@@ -79,8 +86,6 @@ header{
     height: 80px;
     margin: 10px 0px;
     padding: 5px 5px 5px 15px;
-    outline: none;
-    resize: none;
     border: solid 1px #ffaa4e;
   }
 

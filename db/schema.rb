@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_063535) do
+ActiveRecord::Schema.define(version: 2019_12_23_073114) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -53,6 +53,13 @@ ActiveRecord::Schema.define(version: 2019_12_23_063535) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["text"], name: "index_posts_on_text", length: 32
+  end
+
+  create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "post_id"
+    t.text "recipe"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

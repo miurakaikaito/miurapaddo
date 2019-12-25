@@ -5,6 +5,11 @@ class Post < ApplicationRecord
   has_many :liked_users, through: :likes, source: :user
   has_many :images, inverse_of: :post, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
+  has_many :menus, inverse_of: :post, dependent: :destroy
+  accepts_nested_attributes_for :menus, allow_destroy: true
+  has_many :recipes, inverse_of: :post, dependent: :destroy
+  accepts_nested_attributes_for :recipes, allow_destroy: true
+
   # belongs_to :recipe
   # belongs_to :menue
 

@@ -1,3 +1,3 @@
-class Menu < ApplicationRecord
+class Recipe < ApplicationRecord
   belongs_to :post, optional: true
 end
