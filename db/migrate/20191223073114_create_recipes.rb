@@ -3,6 +3,7 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
     create_table :recipes do |t|
       t.integer     :post_id
       t.text     :recipe
+      t.string     :image_url
       t.timestamps
     end
   end

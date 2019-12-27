@@ -1,108 +1,129 @@
 .recipe-main {
-  background-color: white;
+  max-width: 1040px;
+  margin: auto;
+  margin-top: 20px;
 
   &__title {
-    font-size: 40px;
-    display: flex;
-    max-width: 900px;
-    margin: auto;
-    justify-content: center;
-    padding: 15px;
+    text-align: center;
+
   }
+
+    .more{
+
+      &_lists{
+        display: flex;
+        justify-content: space-evenly;
+        :hover{
+          color: #66e84f;
+          transition: all 0.3s ease 0s;
+        }
+        a{
+          color: #4a4a4a;
+        }
+
+      }
+    }
+
 
   &-box{
   display: flex;
   }
 
   &-box__image {
-  height: 500px;
-  width: 800px;
-  background-size: cover;
   margin-bottom: 15px;
-  margin-left: 50px;
   }
 
   &-box-content {
-  height: 400px;
-  width: 200px;
-  margin-bottom: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-
-  
+    margin-left: 50px;
   }
 
-  &-box-content__name {
-  height: 60px;
-  width: 250px;
-  margin: auto;
+  &-box-name {
+  margin-bottom: 10px;
   }
+    .recipe{
+      border-bottom: 2px solid #66e84f;;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 10px;
+    }
+    .zairyou{
+      font-weight: bold;
+      font-size: 20px;
+      padding: 10px;
+    }
  
-  &-box-content__text {
-  height: 440px;
-  width: 250px;
-  border: solid 3px #dbf7c6c2;
-  border-radius: 10px;
-  overflow: scroll;
+  &-box-text {
+
   }
-}
-.recipe-main-box-content__name p{
-  text-align: center;
-  font-size: 35px;
-}
-.recipe-main-box-content__text p{
-  font-size: 25px;
-  text-align: center;
+    .menu-name{
+      border-bottom: 1px solid #c7c7cc;
+      padding: .5em 0;
+      display: flex;
+      justify-content: space-between;
+    }
 }
 
-.step-main {
+    .step-main {
+    margin-top: 20px;
+    }
+      .box-lists{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box-list{
+      }
+        .box-list-numder{
+          font-size: 20px;
+          font-weight: bold;
+          padding: 0 10px;
+        }
+        .box-list-image{
+          padding: 0 10px 10px 10px;
+        }
+        .box-list-text{
+          padding: 0 10px 10px 10px;
+          overflow-wrap: break-word;
+          width: 225px;
+        }
+    .box-title {
+      padding: 0 9px;
+      font-size: 25px;
+      color: #63e204;
+      font-weight: bold;
+    }
 
-}
-.box26 {
-  position: relative;
-  margin: 2em 0;
-  padding: 0.5em 1em;
-  border: solid 3px #dbf7c6c2;
-  border-radius: 8px;
-  margin: 0 30px;
-}
-.box26 .box-title {
-  position: absolute;
-  display: inline-block;
-  top: -13px;
-  left: 10px;
-  padding: 0 9px;
-  line-height: 1;
-  font-size: 19px;
-  background: #FFF;
-  color: #63e204;
-  font-weight: bold;
-}
-.box26 p {
-  margin: 0; 
-  padding: 0;
-  font-size: 20px;
-  text-align: left;
-}
 
-.name{
-  font-size: 40px;
-  padding-right: 15px;
-}
-.name-content{
-  font-size: 30px;
-}
+    .name{
+      font-size: 40px;
+      font-weight: bold;
+    }
+    .name-content{
+      font-size: 30px;
+    }
+    .button_to{
 
-.love-btn{
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  appearance: none;
-  height: 48px;
-  font-size: 15px;
-  border: solid 1px #66e84f;
-  color: #66e84f;
-  width: 253px;
-}
+      :hover{
+        background-color: #66e84f;
+        border: solid 1px #66e84f;
+        color: #fff;
+        transition: all 0.3s ease 0s;
+      }
+    }
+    .love-btn{
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+      appearance: none;
+      height: 48px;
+      font-size: 15px;
+      border: solid 1px #66e84f;
+      color: #66e84f;
+      width: 253px;
+      box-shadow: 0 2px 4px hsla(0,0%,82%,.5);
+      border-radius: 24px;
+      font-weight: 700;
+      line-height: 14px;
+
+    }
