@@ -1,15 +1,13 @@
+.contents{
+  width: 100%;
+  height: 100%;
+}
 .recipe-main {
-  max-width: 1040px;
-  margin: auto;
-  margin-top: 20px;
-
+  width: 80%;
   &__title {
     text-align: center;
-
   }
-
     .more{
-
       &_lists{
         display: flex;
         justify-content: space-evenly;
@@ -20,13 +18,14 @@
         a{
           color: #4a4a4a;
         }
-
       }
     }
 
-
   &-box{
   display: flex;
+  justify-content: center;
+  padding-top: 20px;
+
   }
 
   &-box__image {
@@ -66,9 +65,11 @@
     .step-main {
     margin-top: 20px;
     }
+
       .box-lists{
         display: flex;
         flex-wrap: wrap;
+        margin: 0 50px;
       }
       .box-list{
       }
@@ -86,7 +87,7 @@
           width: 225px;
         }
     .box-title {
-      padding: 0 9px;
+      padding-left: 97px;
       font-size: 25px;
       color: #63e204;
       font-weight: bold;
@@ -126,4 +127,53 @@
       font-weight: 700;
       line-height: 14px;
 
+    }
+.side{
+  float: right;
+  height: 700px;
+  background-color: #c7c7cc;
+  width: 20%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  background: #f3f3f3;
+  overflow: scroll;
+}
+  .textbox{
+    width: 90%;
+    margin: 0 7px;
+    padding: 6px;
+    
+  }
+  .form__submit{
+    width: 90%;
+    margin: 5px 16px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+    background: linear-gradient(180deg,#ffaa4e 1.28%,#febc56 74.02%);
+    border-radius: 100px;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .comments{
+    text-align: center;
+  }
+  .comment{
+
+  }
+    .comments_name{
+      color: #ffaa4e;
+      font-size: 18px;
+
+    }
+    .comments_text{
+      margin: 0 5px;
     }

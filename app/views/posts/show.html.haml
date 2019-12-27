@@ -1,5 +1,23 @@
 = render partial: "header"
 .contents
+  .side
+    .container
+    - if current_user
+      = form_with(model: [@post, @comment], local: true, id: "new_comment") do |form|
+        = form.text_area :text, placeholder: "コメントする" , rows: "2", class: "textbox"
+        = form.submit "SEND", class: "form__submit"
+    - else
+      %strong
+        %p コメントの投稿には新規登録/ログインが必要です
+    .comments
+      .comment ＜コメント一覧＞
+      - if @comments
+        - @comments.each do |comment|
+          %p
+            %strong
+              = link_to comment.user.nickname, "/users/#{comment.user_id}", class:"comments_name"
+            .comments_text
+              = comment.text
   .recipe-main
     .recipe-main-box
       =image_tag "#{@post.image}",size: '460x460',class:'recipe-main-box__image'
@@ -48,20 +66,4 @@
             = image_tag "#{recipe.image_url}", size: '225x250',id: "image-#{i}",class:'box-list-image'
             .box-list-text
               = recipe.recipe
-    .container
-      - if current_user
-        = form_with(model: [@post, @comment], local: true, id: "new_comment") do |form|
-          = form.text_area :text, placeholder: "コメントする" , rows: "2", class: "textbox"
-          = form.submit "SEND", class: "form__submit"
-      - else
-        %strong
-          %p コメントの投稿には新規登録/ログインが必要です
-    .comments
-      %h4 ＜コメント一覧＞
-      - if @comments
-        - @comments.each do |comment|
-          %p
-            %strong
-              = link_to comment.user.nickname, "/users/#{comment.user_id}"
-              ：
-            = comment.text
+
