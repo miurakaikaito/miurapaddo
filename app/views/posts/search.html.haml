@@ -1,5 +1,8 @@
-.box
-  - @post.each do |post|
-    .content_list
-      = link_to "/posts/#{post.id}", class:"box-image" do
-        =image_tag "#{post.image}",size: '270x270',class:'content_image'
+.content
+  .title
+    =link_to "検索結果", "#", class:"title-name"
+  .content_lists
+    - @posts.each do |post|
+      .content_list
+        = link_to "/posts/#{post.id}", class:"box-image" do
+          =image_tag "#{post.image}",size: '270x270',class:'content_image'

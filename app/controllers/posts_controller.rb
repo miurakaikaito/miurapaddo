@@ -33,11 +33,7 @@ class PostsController < ApplicationController
   end
   
   def search
-    @post = Post.search(params[:keyword])
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    @posts = Post.search(params[:keyword])
   end
 
 
