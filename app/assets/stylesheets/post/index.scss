@@ -25,6 +25,7 @@
     text-align: center;
       :hover{
         color: #66e84f;
+        transition: all 0.3s ease 0s;
       }
   }
     .header-name{
@@ -50,6 +51,7 @@
       padding-bottom: 20px;
       :hover{
         border: 1px solid #66e84f;
+        transition: all 0.3s ease 0s;
       }
         }
     &_image{
@@ -69,81 +71,81 @@
 
 
   
-  p {
-    margin: 0.5em;
-  }
+  // p {
+  //   margin: 0.5em;
+  // }
   
-  @keyframes fade-in {
-    0% {
-      display: none;
-      opacity: 0;
-    }
-    1% {
-      display: block;
-      opacity: 0;
-    }
-    100% {
-      display: block;
-      opacity: 1;
-    }
-  }
+  // @keyframes fade-in {
+  //   0% {
+  //     display: none;
+  //     opacity: 0;
+  //   }
+  //   1% {
+  //     display: block;
+  //     opacity: 0;
+  //   }
+  //   100% {
+  //     display: block;
+  //     opacity: 1;
+  //   }
+  // }
   
-  .tab {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    li {
-      padding: 8px 12px;
-      transition: background-color .8s;
-      cursor: pointer;
-      &:hover, &:focus {
-        background-color: #ddd;
-      }
-      &.active {
-        background-color: #f7c9c9;
-      }
-    }
-  }
+  // .tab {
+  //   display: flex;
+  //   margin: 0;
+  //   padding: 0;
+  //   list-style: none;
+  //   li {
+  //     padding: 8px 12px;
+  //     transition: background-color .8s;
+  //     cursor: pointer;
+  //     &:hover, &:focus {
+  //       background-color: #ddd;
+  //     }
+  //     &.active {
+  //       background-color: #f7c9c9;
+  //     }
+  //   }
+  // }
   
-  .content2 {
-    position: relative;
-    border: 2px solid #ccc;
-    padding: 10px;
-    section {
-      display: none;
-      animation: fade-in .8s;
-      &.active {
-        display: block;
-      }
-    }
-  }
+  // .content2 {
+  //   position: relative;
+  //   border: 2px solid #ccc;
+  //   padding: 10px;
+  //   section {
+  //     display: none;
+  //     animation: fade-in .8s;
+  //     &.active {
+  //       display: block;
+  //     }
+  //   }
+  // }
   
-  .content-vue {
-    border: 2px solid #ccc;
-    padding: 10px;
-    overflow: hidden;
-    position: relative;
-  }
+  // .content-vue {
+  //   border: 2px solid #ccc;
+  //   padding: 10px;
+  //   overflow: hidden;
+  //   position: relative;
+  // }
   
-  .v-enter-active,
-  .v-leave-active {
-    transition: all .8s;
-  }
+  // .v-enter-active,
+  // .v-leave-active {
+  //   transition: all .8s;
+  // }
   
-  .v-leave-active {
-    position: absolute;
-  }
+  // .v-leave-active {
+  //   position: absolute;
+  // }
   
-  .v-enter {
-    transform: translateX(-20px);
-    opacity: 0;
-  }
+  // .v-enter {
+  //   transform: translateX(-20px);
+  //   opacity: 0;
+  // }
   
-  .v-leave-to {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
+  // .v-leave-to {
+  //   transform: translateY(-20px);
+  //   opacity: 0;
+  // }
 
 
 

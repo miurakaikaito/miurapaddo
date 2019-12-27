@@ -1,66 +1,67 @@
+= render partial: "header"
 .contents
-  .left-content
-    .recipe-main
-      .recipe-main__title
-        %span.name
-          = @post.name
-        - if current_user.already_liked?(@post)
-          = button_to post_like_path(@post),class:"love-btn", method: :delete do
-            お気に入りにする
-            %i.far.fa-heart
-              #{@post.likes.count}
-        - else
-          = button_to post_likes_path(@post),class:"love-btn", remote: true do
-            お気に入りにする
-            %i.far.fa-heart
-              #{@post.likes.count}
-        -# いいねしたユーザー
-        -# - @post.liked_users.each do |user|
-        -#   = user.nickname
-      .recipe-main-box
-        .recipe-main-box__image{:style => "background-image: url(#{@post.image});"}
-        .recipe-main-box-content
-          .recipe-main-box-content__name
-            %p 材料
-          .recipe-main-box-content__text
-            -@post.menus.where("menu is not NULL").each_with_index do |menu,i|
-              %h3{class: "menu-name#{++i}"}
+  .recipe-main
+    .recipe-main-box
+      =image_tag "#{@post.image}",size: '460x460',class:'recipe-main-box__image'
+      .recipe-main-box-content
+        .recipe-main__title
+          %span.name
+            = @post.name
+          .more
+            %ul.more_lists
+              - if user_signed_in? && current_user.id == @post.user_id
+                %li
+                  = link_to '編集', "/posts/#{@post.id}/edit",class:"edit", method: :get
+                %li
+                  = link_to '削除', "/posts/#{@post.id}",class:"delete", method: :delete
+          - if user_signed_in?
+            - if current_user.already_liked?(@post)
+              = button_to post_like_path(@post),class:"love-btn", method: :delete do
+                お気に入りにする
+                %i.far.fa-heart
+                  #{@post.likes.count}
+            - else
+              = button_to post_likes_path(@post),class:"love-btn", remote: true do
+                お気に入りにする
+                %i.far.fa-heart
+                  #{@post.likes.count}
+            -# いいねしたユーザー
+            -# - @post.liked_users.each do |user|
+            -#   = user.nickname
+        .recipe-main-box-name
+          %p.recipe 料理レシピ
+          %p.zairyou 材料
+        .recipe-main-box-text
+          -@post.menus.where("menu is not NULL").each_with_index do |menu|
+            .menu-name
+              .menu-text1
                 = menu.menu
-      .step-main
-        .box26
-          %span.box-title 作り方
-          .aa
-            -@post.images.where("image_url is not NULL").each_with_index do |img, i|
-              = image_tag "#{img.image_url}", size: '60x60',id: "image-#{i}",class:'post_show_photos'
-          .aa
-            -@post.recipes.where("recipe is not NULL").each_with_index do |recipe,i|
-              %h3{class: "recipe-name#{++i}"}
-                = recipe.recipe
-      .container
-        - if current_user
-          = form_with(model: [@post, @comment], local: true, id: "new_comment") do |form|
-            = form.text_area :text, placeholder: "コメントする" , rows: "2", class: "textbox"
-            = form.submit "SEND", class: "form__submit"
-        - else
-          %strong
-            %p コメントの投稿には新規登録/ログインが必要です
-      .comments
-        %h4 ＜コメント一覧＞
-        - if @comments
-          - @comments.each do |comment|
-            %p
-              %strong
-                = link_to comment.user.nickname, "/users/#{comment.user_id}"
-                ：
-              = comment.text
-  .rigth-content
-    .name-box
-      = @post.user.nickname
-      %span さんの投稿
-    .more
-      %ul.more_lists
-        - if user_signed_in? && current_user.id == @post.user_id
-          %li
-            = link_to '編集', "/posts/#{@post.id}/edit", method: :get
-          %li
-            = link_to '削除', "/posts/#{@post.id}", method: :delete
+              .menu-text2
+                = menu.amount
+    .step-main
+      %span.box-title 作り方
+      .box-lists
+        -@post.recipes.where("recipe is not NULL").each.with_index(1) do |recipe,i|
+          .box-list
+            .box-list-numder
+              = i
+            = image_tag "#{recipe.image_url}", size: '225x250',id: "image-#{i}",class:'box-list-image'
+            .box-list-text
+              = recipe.recipe
+    .container
+      - if current_user
+        = form_with(model: [@post, @comment], local: true, id: "new_comment") do |form|
+          = form.text_area :text, placeholder: "コメントする" , rows: "2", class: "textbox"
+          = form.submit "SEND", class: "form__submit"
+      - else
+        %strong
+          %p コメントの投稿には新規登録/ログインが必要です
+    .comments
+      %h4 ＜コメント一覧＞
+      - if @comments
+        - @comments.each do |comment|
+          %p
+            %strong
+              = link_to comment.user.nickname, "/users/#{comment.user_id}"
+              ：
+            = comment.text

@@ -7,16 +7,20 @@
         = form.file_field :image, class: "name-list1", placeholder: "写真"
       .preview2
       .text2-list
+      #menus
         %h2 材料
         = form.fields_for :menus do |menu|
-          = menu.text_field :menu
+          = render 'menu_fields', form: menu
+        .links
+          -# = link_to_add_association "メニューを追加", form, :menu
       .text2-list
-        %h2 材料
+      #recipes
+        %h2 作り方
         = form.fields_for :recipes do |recipe|
-          = recipe.text_area :recipe, placeholder: "作り方"
+          = render 'recipe_fields', form: recipe
+        .links
+          -# = link_to_add_association "レシピを追加", form, :recipe
       .text2-list
         .image_box_main
           .preview
-          = form.fields_for :images do |img|
-            = img.file_field :image_url 
       = form.submit "SEND", class: "name-list2"

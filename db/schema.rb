@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_073114) do
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "post_id"
     t.string "menu"
+    t.string "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_073114) do
   create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "post_id"
     t.text "recipe"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
