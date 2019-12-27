@@ -20,13 +20,6 @@ ActiveRecord::Schema.define(version: 2019_12_23_073114) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "post_id"
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "post_id"
     t.bigint "user_id"
