@@ -13,7 +13,7 @@ class Post < ApplicationRecord
   def self.search(search)
     return Post.all unless search
     Post.where('name LIKE(?)', "%#{search}%")
-    Post.where('text LIKE(?)', "%#{search}%")
+    # Menu.where('menu LIKE(?)', "%#{search}%")
   end
   mount_uploader :image, ImageUploader
 end

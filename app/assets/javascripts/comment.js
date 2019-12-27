@@ -27,9 +27,11 @@ $(function(){
       $('.comments').append(html)
       $('.textbox').val('')
       $('.form__submit').prop('disabled', false);
+      $('.side').animate({scrollTop: $('.side')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
       alert('error');
     })
   })
  });
+ 
