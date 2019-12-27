@@ -7,9 +7,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
+    @user = User.find(current_user.id)
     @nickname = current_user.nickname
-    @post = current_user.post
+    @post = current_user.posts
+    @image = current_user.image
   end
 
 end
