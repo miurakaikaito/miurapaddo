@@ -43,7 +43,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    10.times{@post.images.build}
     10.times{@post.menus.build}
     # @post.menus.build
     10.times{@post.recipes.build}
