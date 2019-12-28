@@ -8,7 +8,7 @@
         = form.submit "SEND", class: "form__submit"
     - else
       %strong
-        %p コメントの投稿には新規登録/ログインが必要です
+        .comments-else コメントの投稿には新規登録,ログインが必要です
     .comments
       .comment ＜コメント一覧＞
       - if @comments
@@ -66,4 +66,6 @@
             = image_tag "#{recipe.image_url}", size: '225x250',id: "image-#{i}",class:'box-list-image'
             .box-list-text
               = recipe.recipe
+  = render partial: "footer"
+
 

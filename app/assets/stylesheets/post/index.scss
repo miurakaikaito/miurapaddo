@@ -13,7 +13,27 @@
         margin: auto;
       }
   }
-  
+  .content {
+    width: 80%;
+    margin: auto;
+    
+    &_lists{
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    &_list{
+      padding-right: 10px;
+      padding-bottom: 20px;
+      :hover{
+        border: 1px solid #66e84f;
+        transition: all 0.3s ease 0s;
+      }
+        }
+    &_image{
+      box-shadow: 1px 3px 4px rgba(0, 0, 0, .28);
+    }
+  }
   .title {
     font-size: 40px;
     border-bottom: 1px solid #efedeb;
@@ -36,28 +56,7 @@
     font-size: 28px;
     font-weight: bold;
   }
-  .content {
-    width: 80%;
-    margin: auto;
-    &_lists{
-      display: flex;
-      width: 100%;
-      flex-wrap: wrap;
 
-
-    }
-    &_list{
-      padding-right: 10px;
-      padding-bottom: 20px;
-      :hover{
-        border: 1px solid #66e84f;
-        transition: all 0.3s ease 0s;
-      }
-        }
-    &_image{
-      box-shadow: 1px 3px 4px rgba(0, 0, 0, .28);
-    }
-  }
   .box-image{
     height: 270px;
   }
@@ -65,4 +64,5 @@
   .slick-next::before{
     color: black;
   }
+
 

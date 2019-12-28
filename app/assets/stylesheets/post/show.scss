@@ -105,7 +105,6 @@
 
       :hover{
         background-color: #66e84f;
-        border: solid 1px #66e84f;
         color: #fff;
         transition: all 0.3s ease 0s;
       }
@@ -131,17 +130,17 @@
 .side{
   float: right;
   height: 700px;
-  background-color: #c7c7cc;
   width: 20%;
   position: -webkit-sticky;
   position: sticky;
   top: 10px;
   background: #f3f3f3;
   overflow: scroll;
+  margin-top: 10px;
 }
   .textbox{
     width: 90%;
-    margin: 0 7px;
+    margin: 5px 7px;
     padding: 6px;
     
   }
@@ -176,4 +175,8 @@
     }
     .comments_text{
       margin: 0 5px;
+    }
+    .comments-else{
+      padding: 5px 20px;
+      font-size: 18px;
     }

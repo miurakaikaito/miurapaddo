@@ -11,26 +11,28 @@
       %li
         = image_tag "/img/meat-2602031_1280.jpg", :size =>'1152x400'
   .content
-    .title
-      =link_to "人気のレシピ", "#", class:"title-name"
-    .content_lists
-      - @post.each do |post|
-        .content_list
-          = link_to "/posts/#{post.id}", class:"box-image" do
-            =image_tag "#{post.image}",size: '270x270',class:'content_image'
-  .content
-    .title
-      =link_to "肉料理", "#", class:"title-name"
-    .content_lists
-      - @post.each do |post|
-        .content_list
-          = link_to "/posts/#{post.id}", class:"box-image" do
-            =image_tag "#{post.image}",size: '270x270',class:'content_image'
-  .content
-    .title
-      =link_to "魚料理", "#", class:"title-name"
-    .content_lists
-      - @post.each do |post|
-        .content_list
-          = link_to "/posts/#{post.id}", class:"box-image" do
-            =image_tag "#{post.image}",size: '270x270',class:'content_image'
+    .content-box
+      .title
+        =link_to "人気のレシピ", "#", class:"title-name"
+      .content_lists
+        - @post.each do |post|
+          .content_list
+            = link_to "/posts/#{post.id}", class:"box-image" do
+              =image_tag "#{post.image}",size: '270x270',class:'content_image'
+    .content-box
+      .title
+        =link_to "肉料理", "#", class:"title-name"
+      .content_lists
+        - @post.each do |post|
+          .content_list
+            = link_to "/posts/#{post.id}", class:"box-image" do
+              =image_tag "#{post.image}",size: '270x270',class:'content_image'
+    .content-box
+      .title
+        =link_to "魚料理", "#", class:"title-name"
+      .content_lists
+        - @post.each do |post|
+          .content_list
+            = link_to "/posts/#{post.id}", class:"box-image" do
+              =image_tag "#{post.image}",size: '270x270',class:'content_image'
+  = render partial: "footer"

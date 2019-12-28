@@ -1,26 +1,42 @@
+= render partial: "header"
 .contents
-  = form_for @post do |form|
+  = nested_form_for(@post) do |form|
     .container
-      .name-list
-        = form.text_field :name, class: "name-list1", placeholder: "例: ホクホク肉じゃが"
-      .field
-        = form.file_field :image, class: "name-list1", placeholder: "写真"
-      .preview2
-      .text2-list
-      #menus
-        %h2 材料
-        = form.fields_for :menus do |menu|
-          = render 'menu_fields', form: menu
-        .links
-          -# = link_to_add_association "メニューを追加", form, :menu
-      .text2-list
-      #recipes
-        %h2 作り方
-        = form.fields_for :recipes do |recipe|
-          = render 'recipe_fields', form: recipe
-        .links
-          -# = link_to_add_association "レシピを追加", form, :recipe
-      .text2-list
-        .image_box_main
-          .preview
-      = form.submit "SEND", class: "name-list2"
+      .name-lists
+        .name-title
+          %h2 料理タイトル
+        = form.text_field :name, class: "name-list", placeholder: "例: ホクホク肉じゃが"
+      .container-main
+        .container-box
+          .field3
+            .name-image
+              %h2 料理画像
+            = form.file_field :image, class: "name-list-image"
+            .preview3
+        .container-box2
+          .text-list1
+            .menu-name 
+              %h2 材料
+              %h2 分量
+            = form.fields_for :menus  do |form|
+              = form.text_field :menu, placeholder: "例: 豚肉"
+              = form.text_field :amount, placeholder: "例: 350g"
+              = form.link_to_remove "削除", class:"dleate"
+            .aaa
+              = form.link_to_add "追加", :menus, class:"add"
+      .container-box3
+        .recipe-name
+          %h2 作り方
+        .text-list2
+          = form.fields_for :recipes do |form|
+            = form.text_area :recipe
+            = form.file_field :image_url 
+            = form.link_to_remove "削除", class:"dleate"
+          .aaaa
+            = form.link_to_add "追加", :recipes, class:"add"
+          .text-list3
+            .image_box_main
+              .preview
+      = form.submit "投稿する", class: "recipe-btn"
+  = render partial: "footer"
+

@@ -30,11 +30,12 @@ ActiveRecord::Schema.define(version: 2019_12_23_073114) do
   end
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "post_id"
+    t.bigint "post_id"
     t.string "menu"
     t.string "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_menus_on_post_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -50,11 +51,12 @@ ActiveRecord::Schema.define(version: 2019_12_23_073114) do
   end
 
   create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "post_id"
+    t.bigint "post_id"
     t.text "recipe"
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_recipes_on_post_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -74,4 +76,6 @@ ActiveRecord::Schema.define(version: 2019_12_23_073114) do
 
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
+  add_foreign_key "menus", "posts"
+  add_foreign_key "recipes", "posts"
 end
