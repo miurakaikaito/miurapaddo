@@ -1,25 +1,116 @@
 .container{
-  width: 70%;
+  width: 75%;
   margin: auto;
 }
-    .name-list{
+  .container-main{
+    display: flex;
+    padding-top: 10px;
+  }
+
+    .container-box{
+        width: 50%;
+    }
+        .name-lists{
+            width: 700px;
+            margin: auto;
+        }
+            .name-title{
+                font-size: 20px;
+                color: #4a4a4a;
+                padding-top: 20px;
+            }
+            .name-list{
+                width: 90%;
+                height: 30px;
+                padding: 10px;
+                font-size: 20px;
+            }
+
+        .field3{
+            width: 89%;
+        }
+            .dleate{
+                color: #63e204;
+            }
+            .add{
+                color: #63e204;
+            }
+            .name-image{
+                font-size: 20px;
+                color: #4a4a4a;
+            }
+            .name-list-image{
+                height: 30px;
+                width: 100%;
+                background: #f5f5f5;
+                border: 1px dashed #ccc;
+                text-align: center;
+                border-bottom: none;
+            }
+
+            .preview3{
+                height: 383px;
+                width: 100%;
+                background: #f5f5f5;
+                border: 1px dashed #ccc;
+                text-align: center;
+                border-top: none;
+            }
+    .container-box2{
 
     }
+        .text-list1{
 
-    .name-list2{
+        }
+            .menu-name{
+                display: flex;
+                justify-content: space-around;
+                font-size: 20px;
+                color: #4a4a4a;
+            }
+
+    .container-box3{
         
     }
+
+        .text-list2{
+        }
+
+            .recipe-name{
+                font-size: 20px;
+                color: #4a4a4a;
+                padding-top: 20px;
+            }
+            .fields{
+            }
+        .recipe-btn{
+            width: 90%;
+            margin: 5px 16px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+            appearance: none;
+            background: #63e204;
+            border-radius: 100px;
+            padding: 10px 0;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1;
+        
+        }
+
+
+
+
+
+
     .image_box_main {
-    // display: grid;
-    // width: 695px;
-    // background: #f5f5f5;
-    // border: 1px dashed #ccc;
-    // min-height: 162px;
-    // text-align: center;
     display: flex;
     align-items: center;
     justify-content: left;
-    // flex-wrap: wrap;
     input {
         display: none;
     }
@@ -56,9 +147,6 @@
         }
     }
     }
-
-
-
 
     .success{
         width: 30%;

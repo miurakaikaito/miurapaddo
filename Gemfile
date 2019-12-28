@@ -72,6 +72,7 @@ gem 'erb2haml'
 gem 'carrierwave'
 gem 'jquery-turbolinks'
 gem 'nested_form_fields'
+gem "nested_form"
 gem 'cocoon'
 
 group :production do

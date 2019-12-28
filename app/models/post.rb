@@ -3,10 +3,8 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
-  has_many :images, inverse_of: :post, dependent: :destroy
   has_many :menus, inverse_of: :post, dependent: :destroy
   has_many :recipes, inverse_of: :post, dependent: :destroy
-  accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :menus, allow_destroy: true
   accepts_nested_attributes_for :recipes, allow_destroy: true
 
@@ -14,6 +12,7 @@ class Post < ApplicationRecord
     return Post.all unless search
     Post.where('name LIKE(?)', "%#{search}%")
     # Menu.where('menu LIKE(?)', "%#{search}%")
+    
   end
   mount_uploader :image, ImageUploader
 end
