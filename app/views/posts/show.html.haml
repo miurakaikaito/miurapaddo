@@ -50,22 +50,28 @@
           %p.zairyou 材料
           %p.recipe 分量
         .recipe-main-box-text
-          -@post.menus.where("menu is not NULL").each_with_index do |menu|
-            .menu-name
-              .menu-text1
-                = menu.menu
-              .menu-text2
-                = menu.amount
+          -@post.menus.each_with_index do |menu|
+            - if menu.menu.present?||menu.amount.present?
+              .menu-name
+                .menu-text1
+                  = menu.menu
+                .menu-text2
+                  = menu.amount
     .step-main
       %span.box-title 作り方
       .box-lists
-        -@post.recipes.where("recipe is not NULL").each.with_index(1) do |recipe,i|
-          .box-list
-            .box-list-numder
-              = i
-            = image_tag "#{recipe.image_url}", size: '225x250',id: "image-#{i}",class:'box-list-image'
-            .box-list-text
-              = recipe.recipe
+        -@post.recipes.each.with_index do |recipe,i|
+          - if recipe.image_url.present?||recipe.recipe.present?
+            .box-list
+              .box-list-numder
+                = i
+              - if recipe.image_url.present?
+                = image_tag "#{recipe.image_url}", size: '225x250',id: "image-#{i}",class:'box-list-image'
+                .box-list-text
+                  = recipe.recipe
+              - else
+                .box-list-text
+                  = recipe.recipe
   = render partial: "footer"
 
 
