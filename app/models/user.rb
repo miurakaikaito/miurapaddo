@@ -7,6 +7,11 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
+
+  validates :nickname,              presence: true
+  validates :email,                 presence: true
+  validates :password,              presence: true
+  validates :password_confirmation, presence: true
   def already_liked?(post)
     self.likes.exists?(post_id: post.id)
   end

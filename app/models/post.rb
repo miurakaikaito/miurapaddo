@@ -8,6 +8,9 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :menus, allow_destroy: true
   accepts_nested_attributes_for :recipes, allow_destroy: true
 
+  validates :name,              presence: true
+  validates :image,                 presence: true
+
   def self.search(search)
     return Post.all unless search
     Post.where('name LIKE(?)', "%#{search}%")

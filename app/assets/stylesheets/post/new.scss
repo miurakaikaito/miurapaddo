@@ -24,6 +24,7 @@
                 height: 30px;
                 padding: 10px;
                 font-size: 20px;
+                outline: none;
             }
 
         .field3{
@@ -50,6 +51,7 @@
                 border: 1px dashed #ccc;
                 text-align: center;
                 border-bottom: none;
+                outline: none;
             }
 
             .preview3{
@@ -75,10 +77,12 @@
 
             .menu{
                 width: 48%;
+                outline: none;
             }
 
             .amount{
                 width: 48%;
+                outline: none;
             }
             
     .container-box3{
@@ -121,6 +125,10 @@
             }
             .fields{
                 width: 360px;
+            }
+
+            .image_url{
+                outline: none;
             }
 
             .dleate2{

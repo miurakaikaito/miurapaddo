@@ -35,7 +35,7 @@ $(document).on('turbolinks:load', function() {
 $(document).on('turbolinks:load', function() {
   $(function(){
     //画像ファイルプレビュー表示のイベント追加 fileを選択時に発火するイベントを登録
-    $('form').on('change', 'input[type="file"]', function(e) {
+    $('.name-list-image').on('change', function(e) {
       var file = e.target.files[0],
           reader = new FileReader(),
           $preview2 = $(".preview3");
@@ -54,7 +54,6 @@ $(document).on('turbolinks:load', function() {
           // .prevewの領域の中にロードした画像を表示するimageタグを追加
           $preview2.append($('<img>').attr({
                     src: e.target.result,
-                    width: "150px",
                     class: "preview3",
                     title: file.name
                 }));

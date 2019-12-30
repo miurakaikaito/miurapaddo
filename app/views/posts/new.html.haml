@@ -5,12 +5,20 @@
       .name-lists
         .name-title
           %h2 料理タイトル
+        - if @post.errors.any?
+          - @post.errors.full_messages_for(:name).each do |error|
+            .error-name
+              = error
         = form.text_field :name, class: "name-list", placeholder: "例: ホクホク肉じゃが"
       .container-main
         .container-box
           .field3
             .name-image
               %h2 料理画像
+            - if @post.errors.any?
+              - @post.errors.full_messages_for(:image).each do |error|
+                .error-name
+                  = error
             = form.file_field :image, class: "name-list-image"
             .preview3
         .container-box2
@@ -18,6 +26,7 @@
             .menu-name 
               %h2 材料
               %h2 分量
+
             = form.fields_for :menus , class: "recipe-btn" do |form|
               = form.text_field :menu, placeholder: "例: 豚肉", class:"menu"
               = form.text_field :amount, placeholder: "例: 350g", class:"amount"
@@ -32,7 +41,7 @@
           .recipe-lists
             = form.fields_for :recipes do |form|
               = form.text_area :recipe, placeholder: "作り方", class:"recipe2"
-              = form.file_field :image_url 
+              = form.file_field :image_url, class:"image_url", id:"upfile"
               = form.link_to_remove "削除", class:"dleate2"
           .recipe-list
             = form.link_to_add "追加", :recipes, class:"add2"

@@ -3,8 +3,8 @@
   .up_sab アカウント作成
 .up_main
   = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |form|
-    = render "devise/shared/error_messages", resource: resource
-    = devise_error_messages!
+    - if @user.errors.any?
+      .error-name エラーが発生しました
     .field
       = form.label "プロフィール画像"
       %br/
@@ -12,20 +12,43 @@
     .preview2
     .field
       = form.label "ニックネーム"
+      %span.required 必須
       %br/
       = form.text_field :nickname, autofocus: true, maxlength: "6"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:nickname).each do |error|
+          .error-name
+            = error
     .field
       = form.label "メールアドレス"
+      %span.required 必須
       %br/
       = form.email_field :email, autofocus: true, autocomplete: "email"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:email).each do |error|
+          .error-name
+            = error
+
     .field
       = form.label "パスワード"
+      %span.required 必須
       %br/
       = form.password_field :password, autocomplete: "new-password"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:password).each do |error|
+          .error-name
+            = error
+
     .field
       = form.label "確認用パスワード"
+      %span.required 必須
       %br/
       = form.password_field :password_confirmation, autocomplete: "new-password"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:password_confirmation).each do |error|
+          .error-name
+            = error
+
     .field
       = form.label "ひとこと"
       %br/
@@ -37,3 +60,5 @@
 .up_footer
   すでにアカウントをお持ちですか？
   = render "devise/shared/links"
+-# = render partial: "posts/footer"
+
