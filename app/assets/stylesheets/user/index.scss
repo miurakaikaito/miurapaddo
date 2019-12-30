@@ -91,9 +91,16 @@
 
   &_main-box{
     padding: 10px;
+    a{
+      :hover{
+        border: 1px solid #66e84f;
+        transition: all 0.3s ease 0s;
+      }
+    }
   }
   &_image{
     box-shadow: 1px 3px 4px rgba(0, 0, 0, .28);
+
   }
 }
 
