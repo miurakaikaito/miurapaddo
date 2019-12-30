@@ -47,8 +47,8 @@
             -# - @post.liked_users.each do |user|
             -#   = user.nickname
         .recipe-main-box-name
-          %p.recipe 料理レシピ
           %p.zairyou 材料
+          %p.recipe 分量
         .recipe-main-box-text
           -@post.menus.where("menu is not NULL").each_with_index do |menu|
             .menu-name
