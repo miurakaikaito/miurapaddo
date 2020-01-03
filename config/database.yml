@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: miurapaddo_production
+  database: cook_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
