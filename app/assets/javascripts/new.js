@@ -20,7 +20,6 @@ $(document).on('turbolinks:load', function() {
           // .prevewの領域の中にロードした画像を表示するimageタグを追加
           $preview2.append($('<img>').attr({
                     src: e.target.result,
-                    width: "150px",
                     class: "preview2",
                     title: file.name
                 }));
@@ -28,6 +27,7 @@ $(document).on('turbolinks:load', function() {
       })(file);
 
       reader.readAsDataURL(file);
+
     });
   });
 });

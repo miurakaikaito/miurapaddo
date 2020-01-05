@@ -22,9 +22,23 @@
   }
   &_date{
     margin-left: 30px;
+    width: 60%;
+
   }
   &_name{
     font-size: 30px;
+    display: flex;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  &_edit{
+    color: #66e84f;
+    font-size: 21px;
+    padding: 4px 0 0 20px;
+  }
+  &_text{
+
   }
   &_content{
     border-bottom: solid 1px #d5d2cd;

@@ -9,7 +9,7 @@
       .user-index_date
         %span.user-index_name
           = @nickname
-        %br
+          = link_to "編集",edit_user_registration_path, class:"user-index_edit"
         %span.user-index_text
           = @user.text
   .user-index_content

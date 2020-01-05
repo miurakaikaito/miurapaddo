@@ -14,7 +14,7 @@
       = form.label "ニックネーム"
       %span.required 必須
       %br/
-      = form.text_field :nickname, autofocus: true, maxlength: "6"
+      = form.text_field :nickname, placeholder: "例) 山田太郎", autofocus: true, maxlength: "6"
       - if @user.errors.any?
         - @user.errors.full_messages_for(:nickname).each do |error|
           .error-name
@@ -23,7 +23,7 @@
       = form.label "メールアドレス"
       %span.required 必須
       %br/
-      = form.email_field :email, autofocus: true, autocomplete: "email"
+      = form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
       - if @user.errors.any?
         - @user.errors.full_messages_for(:email).each do |error|
           .error-name
@@ -33,7 +33,7 @@
       = form.label "パスワード"
       %span.required 必須
       %br/
-      = form.password_field :password, autocomplete: "new-password"
+      = form.password_field :password, autocomplete: "new-password", placeholder: "6文字以上"
       - if @user.errors.any?
         - @user.errors.full_messages_for(:password).each do |error|
           .error-name
@@ -43,7 +43,7 @@
       = form.label "確認用パスワード"
       %span.required 必須
       %br/
-      = form.password_field :password_confirmation, autocomplete: "new-password"
+      = form.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上"
       - if @user.errors.any?
         - @user.errors.full_messages_for(:password_confirmation).each do |error|
           .error-name
@@ -52,11 +52,11 @@
     .field
       = form.label "ひとこと"
       %br/
-      = form.text_area :text, class:"new-text"
+      = form.text_area :text, class:"new-text", placeholder: "例) 料理を作るのも食べるのも大好き人間です"
 
 
     .actions
-      = form.submit "次に進む" ,class:"btn"
+      = form.submit "登録完了" ,class:"btn"
 .up_footer
   すでにアカウントをお持ちですか？
   = render "devise/shared/links"

@@ -34,8 +34,8 @@
                   = link_to '削除', "/posts/#{@post.id}",class:"delete", method: :delete
           - if user_signed_in?
             - if current_user.already_liked?(@post)
-              = button_to post_like_path(@post),class:"love-btn", method: :delete do
-                お気に入りにする
+              = button_to post_like_path(@post),class:"love-btn2", method: :delete do
+                お気に入り済み
                 %i.far.fa-heart
                   #{@post.likes.count}
             - else

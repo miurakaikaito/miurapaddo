@@ -9,10 +9,6 @@ ja:
         password: パスワード
         password_confirmation: 確認用パスワード
 
-  activerecord:
-    models:
-      post: 投稿
-    attributes:
       post:
         name: 料理タイトル
         image: 料理画像

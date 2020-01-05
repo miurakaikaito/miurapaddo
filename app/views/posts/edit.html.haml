@@ -12,7 +12,9 @@
             .name-image
               %h2 料理画像
             = form.file_field :image, class: "name-list-image"
-            .preview3
+            = form.hidden_field :image_cache
+            = image_tag(@post.image.url, size:'402x300',class:"preview3") if @post.image.url
+
         .container-box2
           .text-list1
             .menu-name 
@@ -33,6 +35,9 @@
             = form.fields_for :recipes do |form|
               = form.text_area :recipe, placeholder: "作り方", class:"recipe"
               = form.file_field :image_url 
+              = form.hidden_field :image_url_cache
+              -# = image_tag(@post.recipes.image_url.url, size:'402x300',class:"preview2") if @post.recipes.image_url.url
+
               = form.link_to_remove "削除", class:"dleate2"
           .recipe-list
             = form.link_to_add "追加", :recipes, class:"add"

@@ -1,36 +1,77 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
+.header2
+  = link_to "MIURA KITCHEN", root_path,class: "up_name"
+  .up_sab アカウント編集
+.up_main
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    - if @user.errors.any?
+      .error-name エラーが発生しました
+
+    .field
+      = f.label "プロフィール画像"
       %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+      = f.file_field :image
+      = f.hidden_field :image_cache
+      = image_tag(@user.image.url, size:'402x300',class:"preview2") if @user.image.url
+
+    .field
+      = f.label "ニックネーム"
+      %span.required 必須
+      %br/
+      = f.text_field :nickname, placeholder: "例) 山田太郎"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:nickname).each do |error|
+          .error-name
+            = error
+
+    .field
+      = f.label "メールアドレス"
+      %span.required 必須
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:email).each do |error|
+          .error-name
+            = error
+
+
+    .field
+      = f.label "新しいパスワード"
+      %span.required 必須
+      %br/
+      = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上"
+      - if @minimum_password_length
+        %br/
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:password).each do |error|
+          .error-name
+            = error
+
+
+    .field
+      = f.label  "確認用パスワード"
+      %span.required 必須
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:password_confirmation).each do |error|
+          .error-name
+            = error
+
+    .field
+      = f.label "ひとこと"
+      %br/
+      = f.text_area :text, class:"new-text", placeholder: "例) 料理を作るのも食べるのも大好き人間です"
+
+    -# .field
+    -#   = f.label :current_password
+    -#   %i (we need your current password to confirm your changes)
+    -#   %br/
+    -#   = f.password_field :current_password, autocomplete: "current-password"
+
+    .actions
+      = f.submit "編集完了", class:"btn"
+.up_footer
+  %h3 アカウント消去
+  %p
+    消去しますか? #{button_to "消去", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete,class:"d-btn"}
