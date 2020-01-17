@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :menus, allow_destroy: true
   accepts_nested_attributes_for :recipes, allow_destroy: true
 
-  validates :name,              presence: true
+  validates :name,              length: { in: 1..13 }
   validates :image,                 presence: true
 
   def self.search(search)
