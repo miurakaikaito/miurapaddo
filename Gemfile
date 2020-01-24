@@ -76,7 +76,9 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'carrierwave'
 gem 'jquery-turbolinks'
+gem 'nested_form_fields'
 gem "nested_form"
+gem 'cocoon'
 gem 'rails-i18n'
 
 group :production do
