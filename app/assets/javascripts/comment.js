@@ -7,7 +7,7 @@ $(function(){
                   <div class="comments_text">
                     ${comment.text}
                   </div>
-                </p>`
+                </p>`;
     return html;
   }
   $('#new_comment').on('submit', function(e){
@@ -24,8 +24,8 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.comments').append(html)
-      $('.textbox').val('')
+      $('.comments').append(html);
+      $('.textbox').val('');
       $('.form__submit').prop('disabled', false);
       $('.side').animate({scrollTop: $('.side')[0].scrollHeight}, 'fast');
     })
